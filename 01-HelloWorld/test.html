@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="test1">
+    <input type="text" v-model="msg">
+    <p>{{msg}}</p>
+  </div>
+  <p id="test2">Hello{{msg}}</p>
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <script type="text/javascript">
+    //  创建vue对象
+    new Vue({
+      el: '#test1',
+      data: { // 对象: 为模板提供数据
+        msg: 'hello vue'
+      }
+    })
+    const vm = new Vue({
+      el: '#test2',
+      data() {
+        return {
+          msg: 'vue',
+          xxx: {}
+        }
+      }
+    })
+    console.log(vm, vm.msg);
+    setTimeout(() => {
+      vm.msg = 'nnnnn'
+    }, 2000);
+  </script>
+</body>
+
+</html>
